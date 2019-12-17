@@ -10,7 +10,7 @@ Http4S bindings for AWS API Gateway &amp; Lambda
 * Make use of as much existing plumbing as possible (Http4s obviously, most likely [Guardrail](https://guardrail.dev))
 
 ## Target deployment cycle
-![alt text][http4s-lambda.png]
+![alt text](http4s-lambda.png)
 
 ## Open questions
 ### How to deal with authorisation/authentication?
