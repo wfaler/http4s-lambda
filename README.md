@@ -7,7 +7,7 @@ Http4S bindings for AWS API Gateway &amp; Lambda
 * As a consequence of the two goals above, enable running Http4s as either a traditional JVM process, or as an AWS Lambda with no changes to code.
 * Allow use of an OpenAPI/Swagger definition as the authoritative source of truth for the API with Guardrail code generation.
 * Make deployment and updating an AWS API Gateway & Http4s Lambda as easy as `sbt publish-api` _if_ an OpenAPI/Swagger definition is used.
-* Make use of as much existing plumbing as possible (Http4s obviously, most likely [Guardrail](https://guardrail.dev))
+* Make use of as much existing plumbing as possible (Http4s obviously, most likely [Guardrail](https://guardrail.dev), maybe [sbt-aws-lambda](https://github.com/saksdirect/sbt-aws-lambda), [Terraform](https://www.terraform.io) or just hook into good old AWS CLI)
 
 ## Target deployment cycle
 ![alt text](http4s-lambda.png)
