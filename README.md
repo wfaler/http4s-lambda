@@ -31,11 +31,6 @@ Note that you can get your `HttpRoutes` from anywhere, and you can use other Mon
 
 The key things is to implement `trait io.chaordic.aws.IOService` and provide it with an implementation for `def routes: HttpRoutes`.
 
-### A word on "thin" vs "fat" lambdas
-Much of what is assumed, and even written in AWS Lambda "best practices" would imply you should have one lambda per endpoint.
-However, you are limited to at most 200 resources in a single CloudFormation Stack, and between AWS gateway endpoints, IAM permissions, DynamoDb tables, Lambdas etc, this is a limit you will come up on very quickly.
-Therefore, in practice, a 1-to-1 mapping between lambdas and http endpoints will quickly cause issues.
-
 ### Deployment
 We will provide an Sbt plugin that makes this easier in the future, but for now:
 * Create an AWS Lambda, and define a handler of `[fully qualified class name implementing IOService]::handle`
@@ -47,6 +42,11 @@ Done!
 We will automate this in the future from Sbt..
 
 The proxy resource means that any path and method request will go straight to your lambda, so it allows Http4s to deal with the routing.
+
+### A word on "thin" vs "fat" lambdas
+Much of what is assumed, and even written in AWS Lambda "best practices" would imply you should have one lambda per endpoint.
+However, you are limited to at most 200 resources in a single CloudFormation Stack, and between AWS gateway endpoints, IAM permissions, DynamoDb tables, Lambdas etc, this is a limit you will come up on very quickly.
+Therefore, in practice, a 1-to-1 mapping between lambdas and http endpoints will quickly cause issues.
 
 ### Acknowledgements
 This code borrows from [Howard Johns Scala server lambda](https://github.com/howardjohn/scala-server-lambda), but intends to move in slightly different directions.
