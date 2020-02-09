@@ -6,8 +6,10 @@ Http4S bindings for AWS API Gateway &amp; Lambda
 * Allow running Http4s `Routes` to be used with no changes as an AWS Lambda (where the Lambda can be used as the target function for >1 API Gateway route). [Done]
 * As a consequence of the two goals above, enable running Http4s as either a traditional JVM process, or as an AWS Lambda with no changes to code. [Done]
 * Create an sbt plugin that makes publishing as easy as `sbt publishApi` [TODO]
+* Actual proper test-coverage, both unit & integration in a real AWS environment.
 
 ## Usage
+
 Easiest possible usage, lambda implemented like so:
 
     import cats.effect.IO
@@ -28,6 +30,11 @@ Easiest possible usage, lambda implemented like so:
 Note that you can get your `HttpRoutes` from anywhere, and you can use other Monads than `IO`, we just provide a convenience trait for `IO` based routes.
 
 The key things is to implement `trait io.chaordic.aws.IOService` and provide it with an implementation for `def routes: HttpRoutes`.
+
+### A word on "thin" vs "fat" lambdas
+Much of what is assumed, and even written in AWS Lambda "best practices" would imply you should have one lambda per endpoint.
+However, you are limited to at most 200 resources in a single CloudFormation Stack, and between AWS gateway endpoints, IAM permissions, DynamoDb tables, Lambdas etc, this is a limit you will come up on very quickly.
+Therefore, in practice, a 1-to-1 mapping between lambdas and http endpoints will quickly cause issues.
 
 ### Deployment
 We will provide an Sbt plugin that makes this easier in the future, but for now:
