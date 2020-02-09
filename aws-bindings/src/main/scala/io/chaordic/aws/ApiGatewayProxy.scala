@@ -29,7 +29,7 @@ case class ApiGatewayRequest(httpMethod: String,
 
 case class ApiGatewayResponse(statusCode: Int, headers: Map[String, String], body: String)
 
-case class ApiGatewayProxy[F[_]](service: HttpRoutes[F], run: F[Unit] => Unit)(implicit F: MonadError[F, Throwable],
+case class ApiGatewayProxy[F[_]](service: HttpRoutes[F])(implicit F: MonadError[F, Throwable],
                                                          decoder: EntityDecoder[F, String]){
   import Error._
   import ApiGatewayProxy._
