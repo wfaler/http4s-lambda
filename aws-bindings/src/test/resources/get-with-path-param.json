@@ -1,0 +1,86 @@
+{
+  "resource": "/{name}",
+  "path": "/jane",
+  "httpMethod": "GET",
+  "headers": {
+    "Content-Type": "application/x-www-form-urlencoded; charset=utf-8",
+    "Host": "r128uw52fk.execute-api.eu-central-1.amazonaws.com",
+    "User-Agent": "Paw/3.1.10 (Macintosh; OS X/10.15.2) GCDHTTPRequest",
+    "X-Amzn-Trace-Id": "Root=1-5df8e49c-b73bbd98566227643dbd2940",
+    "X-Forwarded-For": "85.0.74.102",
+    "X-Forwarded-Port": "443",
+    "X-Forwarded-Proto": "https"
+  },
+  "multiValueHeaders": {
+    "Content-Type": [
+      "application/x-www-form-urlencoded; charset=utf-8"
+    ],
+    "Host": [
+      "r128uw52fk.execute-api.eu-central-1.amazonaws.com"
+    ],
+    "User-Agent": [
+      "Paw/3.1.10 (Macintosh; OS X/10.15.2) GCDHTTPRequest"
+    ],
+    "X-Amzn-Trace-Id": [
+      "Root=1-5df8e49c-b73bbd98566227643dbd2940"
+    ],
+    "X-Forwarded-For": [
+      "85.0.74.102"
+    ],
+    "X-Forwarded-Port": [
+      "443"
+    ],
+    "X-Forwarded-Proto": [
+      "https"
+    ]
+  },
+  "queryStringParameters": {
+    "foo": "bar",
+    "q": "435"
+  },
+  "multiValueQueryStringParameters": {
+    "foo": [
+      "bar"
+    ],
+    "q": [
+      "123",
+      "435"
+    ]
+  },
+  "pathParameters": {
+    "name": "jane"
+  },
+  "stageVariables": null,
+  "requestContext": {
+    "resourceId": "1qes2t",
+    "resourcePath": "/{name}",
+    "httpMethod": "GET",
+    "extendedRequestId": "E2ioZGkTliAFllA=",
+    "requestTime": "17/Dec/2019:14:22:20 +0000",
+    "path": "/test/jane",
+    "accountId": "766914005369",
+    "protocol": "HTTP/1.1",
+    "stage": "test",
+    "domainPrefix": "r128uw52fk",
+    "requestTimeEpoch": 1576592540081,
+    "requestId": "5715038f-9f83-4b02-82bd-5456722344b5",
+    "identity": {
+      "cognitoIdentityPoolId": null,
+      "accountId": null,
+      "cognitoIdentityId": null,
+      "caller": null,
+      "sourceIp": "85.0.74.102",
+      "principalOrgId": null,
+      "accessKey": null,
+      "cognitoAuthenticationType": null,
+      "cognitoAuthenticationProvider": null,
+      "userArn": null,
+      "userAgent": "Paw/3.1.10 (Macintosh; OS X/10.15.2) GCDHTTPRequest",
+      "user": null
+    },
+    "domainName": "r128uw52fk.execute-api.eu-central-1.amazonaws.com",
+    "apiId": "r128uw52fk"
+  },
+  "body": null,
+  "isBase64Encoded": false
+}
