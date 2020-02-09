@@ -13,7 +13,7 @@ lazy val awsBindings = (project in file("aws-bindings")).
  settings(
    commonSettings,
    name := "http4s-aws-core",
-   libraryDependencies ++= Seq(circeGeneric, circeParser, http4sDsl, http4sCirce,
+   libraryDependencies ++= Seq(circeGeneric, circeParser, http4sDsl, http4sCirce, 
      scalatest % Test)
  )
 

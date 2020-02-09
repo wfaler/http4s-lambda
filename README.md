@@ -10,6 +10,17 @@ Http4S bindings for AWS API Gateway &amp; Lambda. Very much a Work In Progress, 
 
 ## Usage
 
+### Dependency 
+In `build.sbt` resolver settings:
+    
+    resolvers += Resolver.bintrayRepo("wfaler", "maven")
+    
+Then for your dependencies:
+    
+    "io.chaordic" %% "http4s-aws-core" % "0.0.1" 
+
+### Write some code
+
 Easiest possible usage, lambda implemented like so:
 
     import cats.effect.IO
