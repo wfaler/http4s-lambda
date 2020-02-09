@@ -1,15 +1,18 @@
 import Dependencies._
 
+//import bintray.BintrayKeys._
+
 lazy val commonSettings = Seq(
-  organization := "io.chaordic.http4s-lambda",
-  version := "0.1.0-SNAPSHOT",
-  scalaVersion := "2.12.8"
+  organization := "io.chaordic",
+  version := "0.0.1",
+  scalaVersion := "2.12.10",
+  bintrayOmitLicense := true
 )
 
 lazy val awsBindings = (project in file("aws-bindings")).
  settings(
    commonSettings,
-   name := "core-bindings",
+   name := "http4s-aws-core",
    libraryDependencies ++= Seq(circeGeneric, circeParser, http4sDsl, http4sCirce,
      scalatest % Test)
  )
@@ -18,6 +21,7 @@ lazy val awsBindings = (project in file("aws-bindings")).
   settings(
     commonSettings,
     name := "example-app",
+    skip in publish := true,
     libraryDependencies ++= Seq(
       scalatest % Test),
     assemblyJarName in assembly := "http4s-lambda.jar",
