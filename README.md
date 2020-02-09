@@ -1,5 +1,5 @@
 ioe# Http4s Lambda
-Http4S bindings for AWS API Gateway &amp; Lambda
+Http4S bindings for AWS API Gateway &amp; Lambda. Very much a Work In Progress, but should do what it says on the tin.
 
 ## Design goals
 * Allow running a local Http4s server for a fast and productive development cycle. [Done]
